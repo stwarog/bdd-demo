@@ -5,12 +5,20 @@ use Behat\Behat\Tester\Exception\PendingException;
 
 class CalculateTaxContext implements Context
 {
+    private CalculationPage $page;
+
+    public function __construct(CalculationPage $page)
+    {
+        $this->page = $page;
+    }
+
     /**
      * @Given /^there is a "([^"]*)" income$/
      */
     public function thereIsAIncome($arg1)
     {
-        throw new PendingException();
+        $this->page->open();
+        $this->page->setIncomeValue($arg1);
     }
 
     /**
