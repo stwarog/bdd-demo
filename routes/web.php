@@ -50,7 +50,7 @@ Route::post('/', function (Request $r) {
     }
 
     if ($kwotaDoOpodatkowania <= 0) {
-        if ($dochod <= 2000) {
+        if ($dochod <= 2000 && $metoda !== 'one') {
             $tax -= $dodatekVotujacy;
         }
     } else {
