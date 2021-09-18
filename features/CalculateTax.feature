@@ -11,17 +11,16 @@ Feature: Calculate Tax
         income < 2000 - voting bonus 1000
         income > 100000 tax is 40%
 
-    Scenario: Calculating tax for 10000 income
+    Scenario Outline: Calculating tax for income by method one
         Given there is a "10000" income
         And method "one" is selected
         When I calculate tax
         Then My tax to pay should be "2000"
-
-    Scenario: Calculating tax for 0 income
-        Given there is a "0" income
-        And method "one" is selected
-        When I calculate tax
-        Then My tax to pay should be "0"
+        Examples:
+            | given | expected |
+            | 100000|  20000    |
+            | 10000 |  2000    |
+            | 0     |  0       |
 
     Scenario: Calculating tax for 10000 income by method "two"
         Given there is a "10000" income
