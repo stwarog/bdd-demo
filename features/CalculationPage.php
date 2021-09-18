@@ -13,4 +13,10 @@ class CalculationPage extends Page
         $element = $this->find('css', '[name="dochod"]');
         $element->setValue($income);
     }
+
+    public function selectMethod($method)
+    {
+        $element = $this->find('css', '#metoda');
+        $element->setValue($method);
+    }
 }

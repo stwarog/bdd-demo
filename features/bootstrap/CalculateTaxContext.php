@@ -26,7 +26,7 @@ class CalculateTaxContext implements Context
      */
     public function methodIsSelected($arg1)
     {
-        throw new PendingException();
+        $this->page->selectMethod($arg1);
     }
 
     /**
