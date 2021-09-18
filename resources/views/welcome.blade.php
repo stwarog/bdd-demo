@@ -12,6 +12,7 @@
         }
     </style>
 </head>
+
 <body>
 <form action="/" method="post">
     <h1>Pro calculator</h1>
@@ -36,4 +37,13 @@
 </form>
 
 </body>
+
+<script lang="java">
+    document.addEventListener('DOMContentLoaded', function () {
+        var tax = document.getElementById('tax');
+        if (tax && parseInt(tax.innerHTML) < 0) {
+            alert('Świetnie, dostałeś socjal! Go vote for us!')
+        }
+    });
+</script>
 </html>
