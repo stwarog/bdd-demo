@@ -1,9 +1,10 @@
 <?php
 
 use Behat\Behat\Context\Context;
-use Behat\Behat\Tester\Exception\PendingException;
+use Behat\MinkExtension\Context\MinkContext;
+use Page\CalculationPage;
 
-class CalculateTaxContext implements Context
+class CalculateTaxContext extends MinkContext implements Context
 {
     private CalculationPage $page;
 
@@ -52,6 +53,8 @@ class CalculateTaxContext implements Context
      */
     public function iShouldBeInvitedForTheElections()
     {
-        throw new PendingException();
+        if (!$this->page->electionInvitationHasBeenShown()) {
+            throw new Exception('Expected to see the invitation, but nothing shown');
+        }
     }
 }

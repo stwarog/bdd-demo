@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+namespace Page;
 
 use SensioLabs\Behat\PageObjectExtension\PageObject\Exception\ElementNotFoundException;
 use SensioLabs\Behat\PageObjectExtension\PageObject\Page;
@@ -36,5 +36,11 @@ class CalculationPage extends Page
         }
 
         return $element->getHtml();
+    }
+
+    public function electionInvitationHasBeenShown()
+    {
+        # todo mock
+        return true;
     }
 }
