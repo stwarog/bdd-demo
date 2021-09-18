@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use SensioLabs\Behat\PageObjectExtension\PageObject\Exception\ElementNotFoundException;
 use SensioLabs\Behat\PageObjectExtension\PageObject\Page;
 
 class CalculationPage extends Page
@@ -24,5 +25,16 @@ class CalculationPage extends Page
     {
         $element = $this->find('css', 'button');
         $element->click();
+    }
+
+    public function getCalculatedTax()
+    {
+        $element = $this->find('css', '#tax');
+
+        if (empty($element)) {
+            throw new ElementNotFoundException(sprintf('Could not find an element "%s"', '#tax'));
+        }
+
+        return $element->getHtml();
     }
 }

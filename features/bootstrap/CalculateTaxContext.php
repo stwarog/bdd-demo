@@ -42,7 +42,9 @@ class CalculateTaxContext implements Context
      */
     public function myTaxToPayShouldBe($expectedTax)
     {
-        throw new PendingException();
+        if ($actual = $this->page->getCalculatedTax() !== $expectedTax) {
+            throw new Exception(sprintf('Expected to have %s tax but is %s', $expectedTax, $actual));
+        }
     }
 
     /**

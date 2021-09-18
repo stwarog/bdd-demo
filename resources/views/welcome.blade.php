@@ -31,7 +31,7 @@
     <button type="submit">Oblicz ile zwortu podatku</button>
 
     @if (@$tax)
-        <div style="margin-top: 50px; padding: 30px; border: 5px solid {{ $tax >= 0 ? 'red' : 'green' }};">Twój tax to: {{ $tax }}</div>
+        <div style="margin-top: 50px; padding: 30px; border: 5px solid {{ $tax >= 0 ? 'red' : 'green' }};">Twój tax to: <span id="tax">{{ $tax }}</span></div>
     @endif
 </form>
 
