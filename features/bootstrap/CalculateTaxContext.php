@@ -14,7 +14,7 @@ class CalculateTaxContext extends MinkContext implements Context
     }
 
     /**
-     * @Given /^there is a "([^"]*)" income$/
+     * @Given /^there is a (.*) income$/
      */
     public function thereIsAIncome($income)
     {
@@ -23,7 +23,7 @@ class CalculateTaxContext extends MinkContext implements Context
     }
 
     /**
-     * @Given /^method "([^"]*)" is selected$/
+     * @Given /^method (.*) is selected$/
      */
     public function methodIsSelected($method)
     {
@@ -39,7 +39,7 @@ class CalculateTaxContext extends MinkContext implements Context
     }
 
     /**
-     * @Then /^My tax to pay should be "([^"]*)"$/
+     * @Then /^My tax to pay should be (.*)$/
      */
     public function myTaxToPayShouldBe($expectedTax)
     {
