@@ -19,4 +19,10 @@ class CalculationPage extends Page
         $element = $this->find('css', '#metoda');
         $element->setValue($method);
     }
+
+    public function submitCalculation()
+    {
+        $element = $this->find('css', 'button');
+        $element->click();
+    }
 }

@@ -34,7 +34,7 @@ class CalculateTaxContext implements Context
      */
     public function iCalculateTax()
     {
-        throw new PendingException();
+        $this->page->submitCalculation();
     }
 
     /**
