@@ -35,6 +35,7 @@ Feature: Calculate Tax
         When I calculate tax
         Then My tax to pay should be "0"
 
+    # @javascript todo mock
     Scenario: Calculating tax for 2000 income by method "two"
         Given there is a "2000" income
         And method "two" is selected
