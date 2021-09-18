@@ -15,18 +15,18 @@ class CalculateTaxContext implements Context
     /**
      * @Given /^there is a "([^"]*)" income$/
      */
-    public function thereIsAIncome($arg1)
+    public function thereIsAIncome($income)
     {
         $this->page->open();
-        $this->page->setIncomeValue($arg1);
+        $this->page->setIncomeValue($income);
     }
 
     /**
      * @Given /^method "([^"]*)" is selected$/
      */
-    public function methodIsSelected($arg1)
+    public function methodIsSelected($method)
     {
-        $this->page->selectMethod($arg1);
+        $this->page->selectMethod($method);
     }
 
     /**
@@ -40,7 +40,7 @@ class CalculateTaxContext implements Context
     /**
      * @Then /^My tax to pay should be "([^"]*)"$/
      */
-    public function myTaxToPayShouldBe($arg1)
+    public function myTaxToPayShouldBe($expectedTax)
     {
         throw new PendingException();
     }
