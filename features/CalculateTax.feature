@@ -27,7 +27,7 @@ Feature: Calculate Tax
             | 2000  |  -1000    | two    |
             | 1000  |  -1000    | two    |
 
-    # @javascript todo mock
+    @javascript
     Scenario: Calculating tax with voting bonus should send an invitation
         Given there is a 2000 income
         And method two is selected
