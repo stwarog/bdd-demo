@@ -1,10 +1,9 @@
 <?php
 
-use Behat\Behat\Context\Context;
-use Behat\MinkExtension\Context\MinkContext;
+use Behat\MinkExtension\Context\RawMinkContext;
 use Page\CalculationPage;
 
-class CalculateTaxContext extends MinkContext implements Context
+class CalculateTaxContext extends RawMinkContext
 {
     private CalculationPage $page;
 
@@ -18,6 +17,7 @@ class CalculateTaxContext extends MinkContext implements Context
      */
     public function thereIsAIncome($income)
     {
+        $this->getSession()->getDriver()->start();
         $this->page->open();
         $this->page->setIncomeValue($income);
     }

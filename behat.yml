@@ -13,3 +13,4 @@ default:
       selenium2: ~
       default_session: goutte
       javascript_session: selenium2
+      browser_name: chrome
