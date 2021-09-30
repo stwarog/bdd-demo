@@ -14,7 +14,7 @@
 </head>
 
 <body>
-<form action="/" method="post">
+<form method="post">
     <h1>Pro calculator</h1>
     <label for="metoda">Metoda podatkowa</label>
     <select name="metoda" id="metoda">
